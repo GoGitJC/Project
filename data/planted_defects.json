@@ -1,0 +1,271 @@
+{
+  "seed": 42,
+  "as_of_date": "2026-03-15",
+  "extract_name": "RPT-2026-03-15",
+  "loan_count": 500,
+  "property_types": [
+    "Single Family",
+    "Condo",
+    "Multi-Family",
+    "Townhouse",
+    "Manufactured"
+  ],
+  "statuses": [
+    "Funded",
+    "Approved",
+    "In Process",
+    "Denied",
+    "Withdrawn"
+  ],
+  "status_bands": {
+    "Funded": {
+      "start": "LN-000001",
+      "end": "LN-000320",
+      "count": 320
+    },
+    "Approved": {
+      "start": "LN-000321",
+      "end": "LN-000380",
+      "count": 60
+    },
+    "In Process": {
+      "start": "LN-000381",
+      "end": "LN-000440",
+      "count": 60
+    },
+    "Denied": {
+      "start": "LN-000441",
+      "end": "LN-000475",
+      "count": 35
+    },
+    "Withdrawn": {
+      "start": "LN-000476",
+      "end": "LN-000500",
+      "count": 25
+    }
+  },
+  "rules": {
+    "missing_from_reporting": "In source as Funded, absent from reporting. Impact = -source amount, once.",
+    "duplicate_in_reporting": "Same loan more than once. Impact = extra copies only. The first reporting row is the legitimate copy.",
+    "incorrect_status": "Present in both, and the reporting status crosses the funded boundary. Impact = the signed change in funded dollars, once.",
+    "incorrect_amount": "Funded in both, amounts differ. Impact = reporting amount - source amount, once."
+  },
+  "defects": {
+    "missing_from_reporting": [
+      {
+        "loan_id": "LN-000012",
+        "source_status": "Funded",
+        "source_amount": 778000,
+        "signed_impact": -778000
+      },
+      {
+        "loan_id": "LN-000048",
+        "source_status": "Funded",
+        "source_amount": 855000,
+        "signed_impact": -855000
+      },
+      {
+        "loan_id": "LN-000103",
+        "source_status": "Funded",
+        "source_amount": 769000,
+        "signed_impact": -769000
+      },
+      {
+        "loan_id": "LN-000156",
+        "source_status": "Funded",
+        "source_amount": 286000,
+        "signed_impact": -286000
+      },
+      {
+        "loan_id": "LN-000210",
+        "source_status": "Funded",
+        "source_amount": 886000,
+        "signed_impact": -886000
+      },
+      {
+        "loan_id": "LN-000244",
+        "source_status": "Funded",
+        "source_amount": 666000,
+        "signed_impact": -666000
+      },
+      {
+        "loan_id": "LN-000287",
+        "source_status": "Funded",
+        "source_amount": 606000,
+        "signed_impact": -606000
+      },
+      {
+        "loan_id": "LN-000319",
+        "source_status": "Funded",
+        "source_amount": 684000,
+        "signed_impact": -684000
+      }
+    ],
+    "duplicate_in_reporting": [
+      {
+        "loan_id": "LN-000007",
+        "source_status": "Funded",
+        "source_amount": 569000,
+        "signed_impact": 569000,
+        "extra_copies": 1
+      },
+      {
+        "loan_id": "LN-000033",
+        "source_status": "Funded",
+        "source_amount": 700000,
+        "signed_impact": 700000,
+        "extra_copies": 1
+      },
+      {
+        "loan_id": "LN-000091",
+        "source_status": "Funded",
+        "source_amount": 192000,
+        "signed_impact": 192000,
+        "extra_copies": 1
+      },
+      {
+        "loan_id": "LN-000140",
+        "source_status": "Funded",
+        "source_amount": 466000,
+        "signed_impact": 466000,
+        "extra_copies": 1
+      },
+      {
+        "loan_id": "LN-000198",
+        "source_status": "Funded",
+        "source_amount": 196000,
+        "signed_impact": 196000,
+        "extra_copies": 1
+      },
+      {
+        "loan_id": "LN-000276",
+        "source_status": "Funded",
+        "source_amount": 732000,
+        "signed_impact": 732000,
+        "extra_copies": 1
+      }
+    ],
+    "incorrect_status": [
+      {
+        "loan_id": "LN-000021",
+        "source_status": "Funded",
+        "source_amount": 613000,
+        "signed_impact": -613000,
+        "reporting_status": "Approved"
+      },
+      {
+        "loan_id": "LN-000067",
+        "source_status": "Funded",
+        "source_amount": 769000,
+        "signed_impact": -769000,
+        "reporting_status": "In Process"
+      },
+      {
+        "loan_id": "LN-000122",
+        "source_status": "Funded",
+        "source_amount": 282000,
+        "signed_impact": -282000,
+        "reporting_status": "Approved"
+      },
+      {
+        "loan_id": "LN-000189",
+        "source_status": "Funded",
+        "source_amount": 660000,
+        "signed_impact": -660000,
+        "reporting_status": "Withdrawn"
+      },
+      {
+        "loan_id": "LN-000255",
+        "source_status": "Funded",
+        "source_amount": 780000,
+        "signed_impact": -780000,
+        "reporting_status": "Denied"
+      },
+      {
+        "loan_id": "LN-000330",
+        "source_status": "Approved",
+        "source_amount": 729000,
+        "signed_impact": 729000,
+        "reporting_status": "Funded"
+      },
+      {
+        "loan_id": "LN-000350",
+        "source_status": "Approved",
+        "source_amount": 634000,
+        "signed_impact": 634000,
+        "reporting_status": "Funded"
+      },
+      {
+        "loan_id": "LN-000400",
+        "source_status": "In Process",
+        "source_amount": 380000,
+        "signed_impact": 380000,
+        "reporting_status": "Funded"
+      },
+      {
+        "loan_id": "LN-000460",
+        "source_status": "Denied",
+        "source_amount": 532000,
+        "signed_impact": 532000,
+        "reporting_status": "Funded"
+      }
+    ],
+    "incorrect_amount": [
+      {
+        "loan_id": "LN-000015",
+        "source_status": "Funded",
+        "source_amount": 297000,
+        "signed_impact": -25000,
+        "amount_delta": -25000,
+        "reporting_amount": 272000
+      },
+      {
+        "loan_id": "LN-000080",
+        "source_status": "Funded",
+        "source_amount": 714000,
+        "signed_impact": 10000,
+        "amount_delta": 10000,
+        "reporting_amount": 724000
+      },
+      {
+        "loan_id": "LN-000175",
+        "source_status": "Funded",
+        "source_amount": 490000,
+        "signed_impact": -5000,
+        "amount_delta": -5000,
+        "reporting_amount": 485000
+      },
+      {
+        "loan_id": "LN-000300",
+        "source_status": "Funded",
+        "source_amount": 811000,
+        "signed_impact": 40000,
+        "amount_delta": 40000,
+        "reporting_amount": 851000
+      }
+    ]
+  },
+  "totals": {
+    "source_funded_total": 181433000,
+    "explained_signed_impact": -3484000,
+    "reporting_funded_total": 177949000,
+    "by_type": {
+      "missing_from_reporting": {
+        "count": 8,
+        "signed_impact": -5530000
+      },
+      "duplicate_in_reporting": {
+        "count": 6,
+        "signed_impact": 2855000
+      },
+      "incorrect_status": {
+        "count": 9,
+        "signed_impact": -829000
+      },
+      "incorrect_amount": {
+        "count": 4,
+        "signed_impact": 20000
+      }
+    }
+  }
+}
